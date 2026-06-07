@@ -1,0 +1,16 @@
+﻿{
+  "Name": "txtEmail",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "eurhPvJ0TkSgLC-aLHWPzg",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/eurhPvJ0TkSgLC-aLHWPzg",
+  "ParentRef": "e70Kt97ak0qD4NWpyWWT4Q/mbVt0Ika3UqOAeqfQMXfEA",
+  "Created": "2026-06-03T06:51:58.3456941Z",
+  "Updated": "2026-06-04T23:21:54.2699299Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

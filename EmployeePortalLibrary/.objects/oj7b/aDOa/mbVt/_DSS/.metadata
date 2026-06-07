@@ -1,0 +1,16 @@
+﻿{
+  "Name": "txtDepartment",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "_DSSdwtIJEy8LF3WlkTgMQ",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/_DSSdwtIJEy8LF3WlkTgMQ",
+  "ParentRef": "e70Kt97ak0qD4NWpyWWT4Q/mbVt0Ika3UqOAeqfQMXfEA",
+  "Created": "2026-06-03T06:52:39.6390798Z",
+  "Updated": "2026-06-03T06:52:52.8609969Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

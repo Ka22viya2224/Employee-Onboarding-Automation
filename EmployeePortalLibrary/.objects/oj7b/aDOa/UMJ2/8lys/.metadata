@@ -1,0 +1,16 @@
+﻿{
+  "Name": "txtPassword",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "8lysjeoetUS6yfYB2XK5AA",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/8lysjeoetUS6yfYB2XK5AA",
+  "ParentRef": "e70Kt97ak0qD4NWpyWWT4Q/UMJ2umwf7kOcIXAliC8NPA",
+  "Created": "2026-06-03T06:34:04.1120413Z",
+  "Updated": "2026-06-04T23:20:49.2109515Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="-TxA0XaJFE6MU0cauR9hog" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="" DesignTimeRectangle="1331, 718, 209, 55" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='txtDesignation' tag='INPUT' type='text' class='' placeholder='Designation' aaname='Designation' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0ba7b433-123c-44bf-840f-35fd6afffde1" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Employee Onboarding Portal' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="1331, 689, 209, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Designation' parentid='employeeForm' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Designation' /&gt;" Guid="608878df-96ce-4d45-9b61-3d37dacc90ca" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="e1b9e22cc97c44919098d65a3ebca316.jpg" xmlns="">0mR_7I3fACkWwF0jFvqgFUw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

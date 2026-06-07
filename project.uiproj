@@ -1,0 +1,6 @@
+{
+  "Name": "POC2_Employee Onboarding Automation",
+  "ProjectType": "Process",
+  "Description": "Robotic Enterprise Framework",
+  "MainFile": "Main.xaml"
+}

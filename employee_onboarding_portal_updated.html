@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Onboarding Portal</title>
+  <style>
+    :root{
+      --bg:#f4f6f9;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --primary:#2563eb;
+      --primary-dark:#1d4ed8;
+      --success:#059669;
+      --danger:#dc2626;
+      --border:#dbe3ef;
+      --shadow:0 16px 45px rgba(15,23,42,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#eef4ff 0%, var(--bg) 100%);
+      color:var(--text);
+      min-height:100vh;
+      padding:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .app{
+      width:100%;
+      max-width:980px;
+      background:var(--card);
+      border:1px solid rgba(219,227,239,.8);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .header{
+      padding:28px 32px;
+      background:linear-gradient(135deg,#1d4ed8 0%, #2563eb 100%);
+      color:#fff;
+    }
+    .header h1{
+      margin:0 0 8px;
+      font-size:30px;
+      line-height:1.2;
+    }
+    .header p{
+      margin:0;
+      opacity:.92;
+      max-width:760px;
+      line-height:1.6;
+    }
+    .content{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+    }
+    .panel{
+      padding:28px 32px 32px;
+    }
+    .panel + .panel{
+      border-left:1px solid var(--border);
+      background:#fbfdff;
+    }
+    .section-title{
+      margin:0 0 18px;
+      font-size:18px;
+      font-weight:700;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .field.full{grid-column:1 / -1;}
+    label{
+      font-size:13px;
+      font-weight:700;
+      color:var(--muted);
+    }
+    input{
+      width:100%;
+      padding:13px 14px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      font-size:14px;
+      outline:none;
+      background:#fff;
+      transition:.2s ease;
+    }
+    input:focus{
+      border-color:var(--primary);
+      box-shadow:0 0 0 3px rgba(37,99,235,.12);
+    }
+    .hint{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:-2px;
+      line-height:1.5;
+    }
+    .buttons{
+      display:flex;
+      gap:12px;
+      margin-top:20px;
+      flex-wrap:wrap;
+    }
+    button{
+      border:0;
+      border-radius:12px;
+      padding:13px 18px;
+      font-size:14px;
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .08s ease, background .2s ease;
+    }
+    button:active{transform:translateY(1px);}
+    .primary{background:var(--primary); color:#fff;}
+    .primary:hover{background:var(--primary-dark);}
+    .secondary{background:#e5eefc; color:#1e40af;}
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:20px;
+      margin-bottom:16px;
+    }
+    .result-label{
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .result-value{
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:.4px;
+      word-break:break-word;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:13px;
+      font-weight:700;
+      margin-top:10px;
+    }
+    .status.success{background:rgba(5,150,105,.1); color:var(--success);}
+    .status.error{background:rgba(220,38,38,.1); color:var(--danger);}
+    .meta{
+      margin-top:16px;
+      font-size:14px;
+      line-height:1.7;
+      color:#374151;
+    }
+    .meta strong{color:#111827;}
+    .small{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:8px;
+      line-height:1.6;
+    }
+    .log{
+      margin-top:16px;
+      border:1px dashed #c7d2fe;
+      background:#eef2ff;
+      color:#1e3a8a;
+      border-radius:14px;
+      padding:14px;
+      font-size:13px;
+      min-height:48px;
+      white-space:pre-wrap;
+      line-height:1.6;
+    }
+    .badge{
+      display:inline-block;
+      padding:4px 8px;
+      border-radius:999px;
+      background:#ecfeff;
+      color:#155e75;
+      font-size:12px;
+      font-weight:700;
+      margin-left:8px;
+    }
+    @media (max-width:840px){
+      .content{grid-template-columns:1fr;}
+      .panel + .panel{border-left:0;border-top:1px solid var(--border);}
+      .grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>Employee Onboarding Portal</h1>
+      <p>
+        Login is restricted to authorized employees only. After login, the portal generates a new Employee ID automatically when employee details are submitted.
+      </p>
+    </div>
+
+    <div class="content">
+      <div class="panel">
+        <h2 class="section-title">Login</h2>
+
+        <div class="grid">
+          <div class="field full">
+            <label for="txtUsername">Username</label>
+            <input id="txtUsername" type="text" placeholder="Enter username" />
+          </div>
+
+          <div class="field full">
+            <label for="txtPassword">Password</label>
+            <input id="txtPassword" type="password" placeholder="Enter password" />
+            <div class="hint">
+              Password rule: at least 8 characters with 1 uppercase, 1 lowercase, 1 number, and 1 special character.
+            </div>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button class="primary" id="btnLogin" onclick="login()">Login</button>
+          <button class="secondary" onclick="fillLoginSample()">Fill Sample Login</button>
+          <button class="secondary" onclick="resetAll()">Reset</button>
+        </div>
+
+        <div class="log" id="log">Waiting for login...</div>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title">Create Employee</h2>
+
+        <div id="employeeForm" style="display:none;">
+          <div class="grid">
+            <div class="field full">
+              <label for="txtEmployeeName">Employee Name</label>
+              <input id="txtEmployeeName" type="text" placeholder="Enter employee name" />
+            </div>
+
+            <div class="field full">
+              <label for="txtEmail">Email</label>
+              <input id="txtEmail" type="email" placeholder="Enter email" />
+            </div>
+
+            <div class="field">
+              <label for="txtDepartment">Department</label>
+              <input id="txtDepartment" type="text" placeholder="Department" />
+            </div>
+
+            <div class="field">
+              <label for="txtDesignation">Designation</label>
+              <input id="txtDesignation" type="text" placeholder="Designation" />
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button class="primary" id="btnSubmit" onclick="submitEmployee()">Submit</button>
+            <button class="secondary" onclick="fillEmployeeSample()">Fill Sample Employee</button>
+          </div>
+
+          <div class="small">
+            Employee ID is generated automatically after submission.
+          </div>
+        </div>
+
+        <div id="successPage" style="display:none;">
+          <div class="card">
+            <div class="result-label">Status</div>
+            <div class="result-value" id="lblSuccess">Employee Created Successfully</div>
+            <div id="statusBadge" class="status success">Success</div>
+          </div>
+
+          <div class="card">
+            <div class="result-label">Generated Employee ID</div>
+            <div class="result-value" id="empId">—</div>
+          </div>
+
+          <div class="card">
+            <div class="result-label">Employee Details</div>
+            <div class="meta" id="summaryText">—</div>
+          </div>
+
+          <div class="buttons">
+            <button class="primary" id="btnNewEmployee" onclick="resetEmployeeForm()">
+              Create Another Employee
+            </button>
+          </div>
+        </div>
+
+        <div id="lockedNote" class="card">
+          <div class="result-label">Access</div>
+          <div class="meta">
+            Please login with an authorized account to continue.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simulated onboarding whitelist (replace later with UiPath DataTable input if needed)
+    const allowedUsers = [
+      { username: "admin", password: "Admin@123", employeeName: "Kaviya", role: "HR", active: true },
+      { username: "hr01", password: "Hr@12345", employeeName: "Sree", role: "HR", active: true },
+      { username: "onboard1", password: "Onboard@1", employeeName: "Arjun", role: "HR", active: true }
+    ];
+
+    let employeeCounter = 1000;
+    let loggedInUser = null;
+
+    function passwordValid(password) {
+      const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      return pattern.test(password);
+    }
+
+    function generateEmployeeId() {
+      employeeCounter += 1;
+      return "EMP" + employeeCounter;
+    }
+
+    function login() {
+      const username = document.getElementById("txtUsername").value.trim();
+      const password = document.getElementById("txtPassword").value.trim();
+      const log = document.getElementById("log");
+
+      if (!passwordValid(password)) {
+        document.getElementById("employeeForm").style.display = "none";
+        document.getElementById("successPage").style.display = "none";
+        document.getElementById("lockedNote").style.display = "block";
+        log.textContent = "Login failed: Password must contain 1 uppercase, 1 lowercase, 1 number, 1 special character, and be at least 8 characters long.";
+        alert("Invalid password format");
+        return;
+      }
+
+      const user = allowedUsers.find(u =>
+        u.username === username &&
+        u.password === password &&
+        u.active === true
+      );
+
+      if (user) {
+        loggedInUser = user;
+        document.getElementById("employeeForm").style.display = "block";
+        document.getElementById("successPage").style.display = "none";
+        document.getElementById("lockedNote").style.display = "none";
+        log.textContent = "Login successful for " + user.employeeName + " (" + user.role + "). You can now create an employee.";
+      } else {
+        document.getElementById("employeeForm").style.display = "none";
+        document.getElementById("successPage").style.display = "none";
+        document.getElementById("lockedNote").style.display = "block";
+        log.textContent = "Login failed: unauthorized user.";
+        alert("Invalid Username or Password");
+      }
+    }
+
+    function submitEmployee() {
+      const employeeName = document.getElementById("txtEmployeeName").value.trim();
+      const email = document.getElementById("txtEmail").value.trim();
+      const department = document.getElementById("txtDepartment").value.trim();
+      const designation = document.getElementById("txtDesignation").value.trim();
+
+      if (!employeeName || !email || !department || !designation) {
+        alert("Please fill all employee fields");
+        return;
+      }
+
+      const employeeId = generateEmployeeId();
+
+      document.getElementById("empId").innerText = employeeId;
+      document.getElementById("summaryText").innerHTML =
+        "<strong>Name:</strong> " + employeeName + "<br>" +
+        "<strong>Email:</strong> " + email + "<br>" +
+        "<strong>Department:</strong> " + department + "<br>" +
+        "<strong>Designation:</strong> " + designation + "<br>" +
+        "<strong>Created By:</strong> " + (loggedInUser ? loggedInUser.employeeName : "Unknown");
+
+      document.getElementById("employeeForm").style.display = "none";
+      document.getElementById("successPage").style.display = "block";
+      document.getElementById("lockedNote").style.display = "none";
+
+      document.getElementById("log").textContent =
+        "Employee created successfully. Generated Employee ID: " + employeeId;
+    }
+
+    function fillLoginSample() {
+      document.getElementById("txtUsername").value = "admin";
+      document.getElementById("txtPassword").value = "Admin@123";
+      document.getElementById("log").textContent = "Sample login filled. Click Login.";
+    }
+
+    function fillEmployeeSample() {
+      document.getElementById("txtEmployeeName").value = "Priya Nair";
+      document.getElementById("txtEmail").value = "priya.nair@example.com";
+      document.getElementById("txtDepartment").value = "Finance";
+      document.getElementById("txtDesignation").value = "Analyst";
+      document.getElementById("log").textContent = "Sample employee details filled. Click Submit.";
+    }
+
+    function resetEmployeeForm() {
+      document.getElementById("txtEmployeeName").value = "";
+      document.getElementById("txtEmail").value = "";
+      document.getElementById("txtDepartment").value = "";
+      document.getElementById("txtDesignation").value = "";
+
+      document.getElementById("successPage").style.display = "none";
+      document.getElementById("employeeForm").style.display = "block";
+
+      document.getElementById("log").textContent = "Ready to create another employee.";
+    }
+
+    function resetAll() {
+      document.getElementById("txtUsername").value = "";
+      document.getElementById("txtPassword").value = "";
+      document.getElementById("txtEmployeeName").value = "";
+      document.getElementById("txtEmail").value = "";
+      document.getElementById("txtDepartment").value = "";
+      document.getElementById("txtDesignation").value = "";
+      document.getElementById("employeeForm").style.display = "none";
+      document.getElementById("successPage").style.display = "none";
+      document.getElementById("lockedNote").style.display = "block";
+      document.getElementById("empId").innerText = "—";
+      document.getElementById("summaryText").innerHTML = "—";
+      document.getElementById("log").textContent = "Waiting for login...";
+      loggedInUser = null;
+    }
+  </script>
+</body>
+</html>

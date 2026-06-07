@@ -1,0 +1,16 @@
+﻿{
+  "Name": "btnNewEmployee",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "5UKQrrE6S0m0GM0FwAmYZw",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/5UKQrrE6S0m0GM0FwAmYZw",
+  "ParentRef": "e70Kt97ak0qD4NWpyWWT4Q/scWQ6B1fgkOoP2ehb1KeJw",
+  "Created": "2026-06-04T23:14:10.3915975Z",
+  "Updated": "2026-06-04T23:14:20.5939977Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

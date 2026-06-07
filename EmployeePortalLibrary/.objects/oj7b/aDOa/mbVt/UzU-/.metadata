@@ -1,0 +1,16 @@
+﻿{
+  "Name": "txtDesignation",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "UzU-8oCaN0KktWSFr1WEiw",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/UzU-8oCaN0KktWSFr1WEiw",
+  "ParentRef": "e70Kt97ak0qD4NWpyWWT4Q/mbVt0Ika3UqOAeqfQMXfEA",
+  "Created": "2026-06-03T06:53:37.2527708Z",
+  "Updated": "2026-06-03T06:53:54.6151032Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

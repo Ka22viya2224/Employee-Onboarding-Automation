@@ -1,0 +1,16 @@
+﻿{
+  "Name": "txtEmployeeName",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "0JRE8N9Oyk2V3E_7FMThow",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/0JRE8N9Oyk2V3E_7FMThow",
+  "ParentRef": "e70Kt97ak0qD4NWpyWWT4Q/mbVt0Ika3UqOAeqfQMXfEA",
+  "Created": "2026-06-03T06:51:18.9315425Z",
+  "Updated": "2026-06-04T23:21:34.7259372Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

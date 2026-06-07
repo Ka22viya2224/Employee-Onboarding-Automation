@@ -1,0 +1,16 @@
+﻿{
+  "Name": "btnSubmit",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "82JGNGg290mtT2fX6OrG2Q",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/82JGNGg290mtT2fX6OrG2Q",
+  "ParentRef": "e70Kt97ak0qD4NWpyWWT4Q/mbVt0Ika3UqOAeqfQMXfEA",
+  "Created": "2026-06-03T06:54:11.9640396Z",
+  "Updated": "2026-06-03T06:54:23.5325416Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

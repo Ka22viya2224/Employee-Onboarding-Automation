@@ -1,0 +1,12 @@
+﻿{
+  "Name": "EmployeePortal",
+  "Description": "Employee Onboarding Portal HTML Application",
+  "Type": "App",
+  "Id": "oj7bgQ44H0yQOPWi1ikurQ",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/oj7bgQ44H0yQOPWi1ikurQ",
+  "Created": "2026-06-03T06:29:57.3442488Z",
+  "Updated": "2026-06-03T06:29:57.3442488Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

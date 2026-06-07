@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Create Employee Employe…",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "2GpU-XWF9ECWLmU-RFCLOA",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/2GpU-XWF9ECWLmU-RFCLOA",
+  "ParentRef": "e70Kt97ak0qD4NWpyWWT4Q/mbVt0Ika3UqOAeqfQMXfEA",
+  "Created": "2026-06-03T07:09:59.0814846Z",
+  "Updated": "2026-06-04T23:22:06.8095719Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.4.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

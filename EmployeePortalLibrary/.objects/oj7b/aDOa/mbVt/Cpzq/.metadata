@@ -1,0 +1,17 @@
+﻿{
+  "Name": "lblSuccess",
+  "Description": "success message",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "CpzqshkbcU24j2oDq1RnyA",
+  "Reference": "e70Kt97ak0qD4NWpyWWT4Q/CpzqshkbcU24j2oDq1RnyA",
+  "ParentRef": "e70Kt97ak0qD4NWpyWWT4Q/mbVt0Ika3UqOAeqfQMXfEA",
+  "Created": "2026-06-03T06:55:26.0969359Z",
+  "Updated": "2026-06-03T06:55:45.2602771Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

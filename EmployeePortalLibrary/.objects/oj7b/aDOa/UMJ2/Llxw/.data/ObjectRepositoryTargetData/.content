@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="LWwFroykYkCmk76BghMw6Q" Reference="e70Kt97ak0qD4NWpyWWT4Q/LlxwliFyKEGV9ayk9AES_A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="" DesignTimeRectangle="398, 748, 92, 53" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='btnLogin' tag='BUTTON' /&gt;" Guid="67e4a51a-621c-4a4f-8efc-715d45741440" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Employee Onboarding Portal' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="baf0c1d1bc4f26f3be934c93f93c3dfa.jpg" xmlns="">0rJtfaQBgvkyE7xR64qrxdQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
