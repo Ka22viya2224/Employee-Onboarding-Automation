@@ -1,39 +1,180 @@
-### Documentation is included in the Documentation folder ###
+# Employee Onboarding Automation
 
+## Project Overview
 
-### REFrameWork Template ###
-**Robotic Enterprise Framework**
+Employee Onboarding Automation is a UiPath-based RPA solution developed to automate the employee onboarding process. The solution follows a Producer-Consumer architecture using UiPath Orchestrator Queues and REFramework.
 
-* Built on top of *Transactional Business Process* template
-* Uses *State Machine* layout for the phases of automation project
-* Offers high level logging, exception handling and recovery
-* Keeps external settings in *Config.xlsx* file and Orchestrator assets
-* Pulls credentials from Orchestrator assets and *Windows Credential Manager*
-* Gets transaction data from Orchestrator queue and updates back status
-* Takes screenshots in case of system exceptions
+The automation validates employee information submitted through an Employee Onboarding Portal, processes valid employee records, generates Employee IDs, and sends email notifications to employees and HR teams.
 
+---
 
-### How It Works ###
+## Business Requirement
 
-1. **INITIALIZE PROCESS**
- + ./Framework/*InitiAllSettings* - Load configuration data from Config.xlsx file and from assets
- + ./Framework/*GetAppCredential* - Retrieve credentials from Orchestrator assets or local Windows Credential Manager
- + ./Framework/*InitiAllApplications* - Open and login to applications used throughout the process
+The HR team receives employee onboarding requests through an internal portal. Manual validation and processing of employee records is time-consuming and prone to errors.
 
-2. **GET TRANSACTION DATA**
- + ./Framework/*GetTransactionData* - Fetches transactions from an Orchestrator queue defined by Config("OrchestratorQueueName") or any other configured data source
+The objective of this automation is to:
 
-3. **PROCESS TRANSACTION**
- + *Process* - Process trasaction and invoke other workflows related to the process being automated 
- + ./Framework/*SetTransactionStatus* - Updates the status of the processed transaction (Orchestrator transactions by default): Success, Business Rule Exception or System Exception
+* Validate employee onboarding requests.
+* Process valid employee records automatically.
+* Send notifications for invalid employee details.
+* Generate Employee IDs for approved employees.
+* Send welcome emails to newly onboarded employees.
+* Maintain transaction tracking using UiPath Orchestrator Queues.
 
-4. **END PROCESS**
- + ./Framework/*CloseAllApplications* - Logs out and closes applications used throughout the process
+---
 
+## Solution Architecture
 
-### For New Project ###
+The solution consists of two independent processes:
 
-1. Check the Config.xlsx file and add/customize any required fields and values
-2. Implement InitiAllApplications.xaml and CloseAllApplicatoins.xaml workflows, linking them in the Config.xlsx fields
-3. Implement GetTransactionData.xaml and SetTransactionStatus.xaml according to the transaction type being used (Orchestrator queues by default)
-4. Implement Process.xaml workflow and invoke other workflows related to the process being automated
+### Producer Process
+
+The Producer process performs the following activities:
+
+* Reads employee information from the onboarding portal.
+* Validates employee details.
+* Identifies invalid records.
+* Sends email notifications for invalid employee data.
+* Adds valid employee records into the Orchestrator Queue.
+
+### Consumer Process
+
+The Consumer process performs the following activities:
+
+* Retrieves queue transactions from Orchestrator.
+* Processes employee onboarding requests.
+* Generates unique Employee IDs.
+* Sends welcome emails to employees.
+* Marks transactions as successful or failed.
+
+---
+
+## Key Features
+
+* Producer-Consumer Architecture
+* Queue-Based Transaction Processing
+* REFramework Implementation
+* Gmail SMTP Integration
+* Employee ID Generation
+* Automated Email Notifications
+* Exception Handling
+* Transaction Logging
+* Orchestrator Integration
+* Git Version Control
+
+---
+
+## Technologies Used
+
+* UiPath Studio
+* UiPath Orchestrator
+* REFramework
+* Gmail SMTP
+* HTML Employee Portal
+* Queue Management
+* GitHub
+* Excel
+
+---
+
+## Orchestrator Components
+
+The following Orchestrator components are used:
+
+### Processes
+
+* Employee Onboarding Producer
+* Employee Onboarding Consumer
+
+### Queue
+
+* Employee_Details
+
+### Connections
+
+* Gmail Connection for Email Notifications
+
+### Jobs
+
+* Unattended Execution
+* Queue-Based Processing
+
+---
+
+## Email Notifications
+
+The automation sends different email notifications:
+
+### Invalid Employee Details
+
+When employee data fails validation, an email notification is sent to HR.
+
+### Welcome Email
+
+When onboarding is completed successfully, a welcome email is sent to the employee.
+
+---
+
+## Exception Handling
+
+The solution includes exception handling for:
+
+* Invalid Employee Data
+* Email Sending Failures
+* Queue Processing Errors
+* Application Exceptions
+* System Exceptions
+
+The REFramework retry mechanism is used where applicable.
+
+---
+
+## Logging
+
+Detailed logs are generated throughout the automation lifecycle.
+
+Examples include:
+
+* Process Started
+* Employee Validation Completed
+* Queue Item Added Successfully
+* Welcome Email Sent Successfully
+* Transaction Successful
+* Process Completed
+
+These logs are available in UiPath Orchestrator for monitoring and auditing purposes.
+
+---
+
+## Benefits
+
+* Reduced manual effort
+* Faster onboarding process
+* Improved data accuracy
+* Automated employee communication
+* Better transaction tracking
+* Centralized monitoring through Orchestrator
+* Scalable queue-based architecture
+
+---
+
+## Future Enhancements
+
+* Database Integration
+* Active Directory Integration
+* Employee Document Generation
+* Dashboard Reporting
+* Multi-Department Approval Workflow
+* API-Based Employee Management
+
+---
+
+## Version Control
+
+The project source code is maintained using GitHub to support collaboration, version tracking, and deployment management.
+
+---
+
+## Conclusion
+
+This project demonstrates a complete end-to-end Employee Onboarding Automation solution using UiPath, REFramework, Queues, Orchestrator, SMTP Email Integration, and GitHub version control. The implementation follows enterprise-level RPA development practices and showcases both Producer and Consumer transaction-processing patterns.
